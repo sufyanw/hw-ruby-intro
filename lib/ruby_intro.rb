@@ -31,11 +31,21 @@ def hello(name)
 end
 
 def starts_with_consonant?(s)
-  # YOUR CODE HERE
+  return false if s.empty?
+
+  vowels = %w[A E I O U]
+
+  return false unless s.match?(/\A[A-Za-z]+\z/)
+  !vowels.include?(s[0].upcase)
+
 end
 
 def binary_multiple_of_4?(s)
-  # YOUR CODE HERE
+  return false if s.empty?
+
+  return false unless s.match?(/\A[0-9]+\z/)
+  s.to_i(2) % 4 == 0
+
 end
 
 # Part 3
